@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:monportfolio/presentation/widgets/about_me.dart';
-import 'package:monportfolio/presentation/widgets/companies.dart';
+import 'package:monportfolio/presentation/widgets/call_to_action.dart';
+import 'package:monportfolio/presentation/widgets/skills.dart';
+import 'package:monportfolio/presentation/widgets/footer.dart';
 import 'package:monportfolio/presentation/widgets/latest_case_study.dart';
-import 'package:monportfolio/presentation/widgets/navigation_bar.dart';
 import 'package:monportfolio/presentation/widgets/header_content.dart';
 
 class HomePage extends StatelessWidget {
@@ -29,16 +30,19 @@ class HomePage extends StatelessWidget {
               ),
               Column(
                 children: [
-                  const Navigation(),
                   const HeaderContent(),
                   SizedBox(height: 40.w),
-                  const Companies(),
                 ],
-              )
+              ),
+              // Positioned(bottom: 0, child: const AboutMe()),
+              Positioned(
+                  top: 420, left: 100.w, right: 100.w, child: const Skills()),
             ],
           ),
-          AboutMe(),
-          LatestCaseStudy()
+          const AboutMe(),
+          const LatestCaseStudy(),
+          const CallToAction(),
+          const Footer()
         ],
       ),
     )));

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:monportfolio/presentation/pages/home_page.dart';
 
 class MyApp extends StatelessWidget {
@@ -10,10 +11,11 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
       designSize: const Size(890, 1920),
       child: GetMaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: const HomePage(),
-        theme: ThemeData.light(),
-      ),
+          debugShowCheckedModeBanner: false,
+          home: const HomePage(),
+          theme: ThemeData.light().copyWith(
+            textTheme: GoogleFonts.robotoTextTheme(),
+          )),
     );
   }
 }
