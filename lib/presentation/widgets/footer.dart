@@ -6,15 +6,27 @@ class Footer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
-        NavLinks(),
-        Text(
-          '© 2024 Nasraoui Sarra',
-          style: TextStyle(fontSize: 10),
-        )
-      ],
+    return Container(
+      margin: const EdgeInsets.only(
+        top: 20,
+      ),
+      child: const Column(
+        children: [
+          Divider(
+            thickness: 0.5,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              NavLinks(),
+              Text(
+                '© 2024 Nasraoui Sarra',
+                style: TextStyle(fontSize: 10),
+              )
+            ],
+          ),
+        ],
+      ),
     );
   }
 }

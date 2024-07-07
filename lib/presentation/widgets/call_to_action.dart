@@ -35,9 +35,12 @@ class Content extends StatelessWidget {
               fontFamily: 'Roboto',
               letterSpacing: 1.2,
             )),
+        const SizedBox(height: 20),
         const Text(
             'Do you fancy saying hi to me or do you want to get started with your project and you need my help? Feel free to contact me.'),
-        MyButton(text: 'Contact With Me  -->')
+        const SizedBox(height: 20),
+        MyButton(text: 'Contact with me'),
+        const SizedBox(height: 20),
       ],
     );
   }
@@ -51,14 +54,11 @@ class Information extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text('Let\'s Connect in...',
-            style: TextStyle(
-              fontSize: 13,
-              fontWeight: FontWeight.bold,
-              color: Colors.black,
-              fontFamily: 'Roboto',
-              letterSpacing: 1.2,
-            )),
+        Text('Let\'s Connect in...',
+            style: Theme.of(context)
+                .textTheme
+                .titleSmall!
+                .copyWith(fontWeight: FontWeight.bold)),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -85,9 +85,21 @@ class WebView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [Content(), Information()],
+    return Container(
+      padding: EdgeInsets.symmetric(
+          vertical: 50, horizontal: MediaQuery.sizeOf(context).width * 0.08),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Expanded(flex: 3, child: Content()),
+          Expanded(
+              flex: 5,
+              child: Container(
+                height: 200,
+                child: const Information(),
+              )),
+        ],
+      ),
     );
   }
 }
